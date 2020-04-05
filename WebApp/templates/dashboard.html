@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="breadcrumbs" style="margin-top: 80px;">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Wallet Balance: <span id="balance"></span></h2>
+          <h2>Wallet Balance Pending: <span id="balance_p"></span></h2>
+          <a href="/mine_t"><button class="button button-block" style="width: 150px;">Mine</button></a>
+        </div>
+
+      </div>
+    </section>
+
+{% with message = get_flashed_messages() %}  
+	{% if message %}  
+		{% for m in message %} 
+	    	<center><h3>{{ m }}</h3></center> 
+	    {% endfor %}   
+	{% endif %}  
+{% endwith %}  
+
+{% if data['type']=='smb' %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-6"> 
+			<div class="form">
+				<form action="/add_service" method="post">
+					<h1 style="font-size: 22px;">Add Service</h1>
+					<div class="field-wrap">
+				          <label>
+				            Enter Service Name
+				          </label>
+			              <input type="text" name="name" required autocomplete="off" />
+			        </div>
+			        <div class="field-wrap">
+				          <label>
+				            Enter Service Price
+				          </label>
+			              <input type="number" name="amount" required autocomplete="off" />
+			        </div>
+			        <button type="submit" class="button button-block">Add</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form">
+			<h1 style="font-size: 22px;">Services Offered by {{ data['name'] }}</h1>
+			<table style="border: 1px solid #a0b3b0; color: #a0b3b0; font-size: 20px;" border="1px solid #a0b3b0">
+				<col width="250">
+				<col width="250">
+				<tr>
+					<th><center>Service Name</center></th>
+					<th><center>Service Price</center></th>
+				</tr>
+				{% for service in serviceinfo.chain %}
+					{% for s in service.transactions %}
+						{% if s['id']==data['username'] %}
+							<tr>
+								<td align="center">{{ s['name'] }}</td>
+								<td align="center">{{ s['amount'] }}</td>
+								<!-- <th><a href="/delete_service"><button>Delete</button></a></th> -->
+							</tr>
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+			</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% else %}
+
+<div class="form" style="max-width: 1000px;">
+	<h1 style="font-size: 22px;">Services Offered by various Small and Medium Bussiness</h1>
+	<table style="border: none; color: #a0b3b0; font-size: 20px;" border="1px solid #a0b3b0">
+		<col width="300">
+		<col width="250">
+		<col width="250">
+		<col width="200">
+		<tr>
+			<th><center>Company Name</center></th>
+			<th><center>Service Name</center></th>
+			<th><center>Service Price</center></th>
+		</tr>
+		{% for service in serviceinfo.chain %}
+			{% for s in service.transactions %}
+				<tr>
+					<td align="center">{{ s['company_name'] }}</td>
+					<td align="center">{{ s['name'] }}</td>
+					<td align="center">{{ s['amount'] }}</td>
+					<td style="border: none; padding: 10px;"><a href="/buy_service/{{s['id']}}/{{s['amount']}}"><button class="button button-block">Buy</button></a></td>
+				</tr>
+			{% endfor %}
+		{% endfor %}
+	</table>
+</div>
+
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			    $.ajax({
+				    url: "/get_balance",
+			      	type: "get",
+			      	success: function(response) {
+			       		$("#balance").html(response['amount']);
+			       		$("#balance_p").html(response['amount_p']);
+			       	},
+			       	error: function(xhr) {
+			       		//pass
+				    }
+		     	});
+		   	});
+	</script>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="form" style="margin-top: 120px;">
+		<h1 style="font-size: 22px;">Confirm Payment</h1>
+		<form method="post" action="/success">
+        	<div class="field-wrap">
+        		<label>Sender's Address</label>
+        		<br>
+				<br>
+				<input type="text" name="sender_address" value="{{ response['transaction']['sender_address'] }}" required readonly/>
+			</div>
+        	<div class="field-wrap">
+				<label>Sender's Private Address</label>
+				<br>
+				<br>
+				<input type="text" name="sender_private_key" value="{{ response['transaction']['sender_private_key'] }}" required readonly/>
+			</div>
+        	<div class="field-wrap">
+				<label>Recepient's Address:</label>
+				<br>
+				<br>
+				<input type="text" name="recipient_address" value="{{ response['transaction']['recipient_address'] }}" required readonly/>
+			</div>
+        	<div class="field-wrap">
+				<label>Amount:</label>
+				<br>
+				<br>
+				<input type="number" name="amount" value="{{ response['transaction']['value'] }}" required readonly/>
+			</div>
+        	<div class="field-wrap">
+				<label>Signature:</label>
+				<br>
+				<br>
+				<input type="text" name="signature" value="{{ response['signature'] }}" required readonly/>
+			</div>
+			<button type="submit" name="signupbtn" class="button button-block"/>Confirm</button>
+		</form>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form" style="margin-top: 120px">
+	<form method="post" action="/register_with">
+		<h1 style="font-size: 22px;">Enter the node url which you wish to connect to!</h1>
+		<div class="field-wrap">
+	          <label>
+	            Enter URL
+	          </label>
+              <input type="url" name="node_address" required autocomplete="off" />
+        </div>
+        <button type="submit" class="button button-block"/>Add Node</button>
+	</form>
+</div>
+
+{% endblock %}

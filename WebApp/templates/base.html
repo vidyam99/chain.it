@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>chain.it</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{request.host_url}}static/assets/img/favicon.png" rel="icon">
+  <link href="{{request.host_url}}static/assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{request.host_url}}static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{request.host_url}}static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{request.host_url}}static/assets/css/style.css" rel="stylesheet">
+  <!-- <link href="static/assets/css/custom.css" rel="stylesheet"> -->
+  <style type="text/css">
+  
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: white;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #68A4C4;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 18px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #0b214f;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #68A4C4;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 20px;
+}
+label .req {
+  margin: 2px;
+  color: #68A4C4;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+select, input, textarea {
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 0;
+  border-color: #68A4C4;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #68A4C4;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #0b214f;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+</style>
+  {% block head %}
+
+  {% endblock %}
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="{{ url_for('index') }}"><span>chain.it</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('join_network') }}">Join</a></li>
+          <li><a href="{{ url_for('data_analytics') }}">Analytics</a></li>
+          <li><a href="{{ url_for('team_info') }}">Team</a></li>
+          <li><a href="{{ url_for('login_signup') }}">Connect</a></li>
+          <!-- <li><a href="blog.html">Blog</a></li> -->
+          {% if session['logged_in']==True %}
+            <li class="drop-down"><a href="#">Hi {{ session['data']['username'] }}</a>
+              <ul>
+                <li><a href="{{ url_for('user_profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('user_dashboard') }}">Dashboard</a></li>
+                <!-- <li class="drop-down"><a href="#">Drop Down 2</a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 3</a></li>-->
+                <li><a href="{{ url_for('logout_user') }}">Logout</a></li>
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <div style="min-height: 460px;">
+
+{% block content %}
+
+{% endblock %}
+</div>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <!-- <div class="footer-newsletter">
+      <div class="container">
+        <center>One Stop Solution for SMBs</center>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <!-- <div class="copyright">
+        <strong><span>chain.it</span></strong>
+      </div> -->
+      <div class="credits">
+        <br>
+        Developed by <a href="https://github.com/vidyam99/">Vidya Makwana</a> and <a href="https://github.com/sayali-khot/">Sayali Khot</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{request.host_url}}static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{request.host_url}}static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{request.host_url}}static/assets/js/main.js"></script>
+  <script src="{{request.host_url}}static/assets/js/custom.js"></script>
+  <script src="{{request.host_url}}static/assets/js/Chart.min.js"></script>
+
+</body>
+
+</html>

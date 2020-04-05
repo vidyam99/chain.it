@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style type="text/css">
+h2{
+	color: #a0b3b0
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="form" style="margin-top: 120px;">
+	<h1>{{session['data']['name']}}</h1>
+	<h2 ><b>Username:</b> {{session['data']['username']}}</h2>
+	<h2 ><b>Password:</b> {{session['data']['password']}}</h2>
+	<h2 ><b>Type:</b> {{session['data']['type']}}</h2>
+	<h2 ><b>Joined on:</b> {{session['data']['timestamp']}}</h2>
+	<h2 ><b>Public Address:</b> </h2>
+		<input type="text" value="{{session['data']['public_key']}}" readonly>
+		<br>
+	<h2 ><b>Private Address:</b></h2>
+	<input type="text" value="{{session['data']['private_key']}}" readonly>
+</div>
+
+{% endblock %}
