@@ -14,11 +14,10 @@ Small and Medium business contribute to over 80% of the total payments transacti
 
 <div align="center">
 
-<img src="./Images/ss1.png" width=530px height=540px/>
-<img src="./Images/ss2.png" width=265px height=540px/>
-<br>
-<img src="./Images/ss3.png" width=530px height=540px/>
-<img src="./Images/ss4.png" width=265px height=540px/>
+<img src="./Images/1.png"/>
+<img src="./Images/2.png"/>
+<img src="./Images/3.png"/>
+<img src="./Images/4.png"/>
 </div>
 
 ### Future scope of this project:
