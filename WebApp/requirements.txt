@@ -11,7 +11,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
 Naked==0.1.31
-numpy==1.16.6
+numpy==1.22.0
 pandas==0.24.2
 pathlib==1.0.1
 py-crypto==0.0.4
